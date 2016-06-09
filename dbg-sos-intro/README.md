@@ -34,7 +34,7 @@ Switch to the main thread using the `~0s` command and issue the `!CLRStack` comm
 
 Issue the `~* e !clrstack` command to list all the application threads’ managed call stacks automatically. For some threads, this will display an error because the thread is not a managed thread (so it doesn’t have a managed call stack).
 
-Issue the `~* e ".echo -------; !clrstack"` command to list all the application threads’ managed call stacks with some additional custom output.
+Issue the `~* e .echo -------; !clrstack` command to list all the application threads’ managed call stacks with some additional custom output.
 
 Issue the `!Threads` command to view a list of all the managed threads in the application. Note the first three columns – the debugger thread id, the managed thread id, and the OS (Windows) thread id. Also note the **Exception** column, which tells you that two of the threads are thread pool threads. If there is a managed exception on one of the threads, you will see the managed exception details.
 
@@ -72,7 +72,7 @@ Next, inspect the array in memory to make sure you can see the same thing as the
 Next, execute a debugger command that will display each of the two strings in the args array. Replace *address* in the following command with the address of the array obtained in the previous steps:
 
 ```
-.foreach /pS 4 (s {dd /c 5 address L5}) {!do -nofields s}
+.foreach /pS 3 (s {dd /c 5 address L4}) {!do -nofields s}
 ```
 
 In the preceding command, the `/c` switch tells the `dd` command to display five columns on every line, which means the output fits on one line. Then, the `/pS` switch tells the `.foreach` command to skip the first four tokens (which are the array address and its first three DWORDs). This means that the loop executes for each of the actual string references in the array.
@@ -138,9 +138,3 @@ Now, hit F5 (or `g`) to resume execution and wait for the breakpoint to hit. Nex
 ```
 
 Finally, hit F5 (or `g`) and wait for the breakpoint to be hit. At this point, you can quit the debugger and the debugged application.
-
-> Note: The above process could be automated somewhat -- you could have the debugger automatically stop when the CLR is loaded and set up the breakpoint in the `Main` method using the following command:
->
-> ```
-> sxe ld clr ".loadby sos clr; !bpmd DebuggingDemo DebuggingDemo.Program.Main; gc"
-> ```
