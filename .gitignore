@@ -198,3 +198,4 @@ Thumbs.db
 
 # Vim swap buffer
 *.swp
+*.vshost.*
