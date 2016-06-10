@@ -42,6 +42,7 @@ namespace Worker
 
                 counter++;
 
+                Console.WriteLine("Tick");
                 WaitHandle.WaitAll(new[] { _token.WaitHandle }, TimeSpan.FromMilliseconds(500));
             }
         }

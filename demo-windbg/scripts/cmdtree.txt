@@ -1,0 +1,74 @@
+windbg ANSI Command Tree 1.0
+title {"Commands"}
+body
+{"Commands"}
+ {"Extensions"}
+  {"Load SOS .Net2[.loadby sos mscorwks]"} {".loadby sos mscorwks;"}
+  {"Load SOS .Net4[.loadby sos clr]"} {".loadby sos clr"}
+  {".prefer_dml 1"} {".prefer_dml 1"}
+ {"Information"}
+  {"Open help"} {".hh"}
+  {"Time of dump"} {".time"}
+  {"Process being debugged"} {"|"}
+  {"Dump location"} {"||"}
+  {"Process Environment Block"} {"!peb"}
+  {"Last event"} {".lastevent"}
+ {"Logging"}
+  {"Open log"} {".logopen /t /u /d"}
+  {"Close log"} {".logclose"}  
+ {"Breakpoints"}
+  {"Break on sos loading"} {"sxeld:clr"}
+  {"Breaks when GC starts, enter gu for gc end"} {"bp clr!WKS::GCHeap::GarbageCollectGeneration"}
+ {"Modules"}
+  {"All Modules[lm D sm]"} {"lm D sm"}
+  {"Loaded Modules[lmo D sm]"} {"lmo D sm"}
+  {"Loaded Modules (verbose)[lmvo D sm]"} {"lmvo D sm"}
+  {"Modules w/o symbols[lme D sm]"} {"lme D sm"}
+  {"Break when clr is loading[sxe ld clr.dll]"} {"sxe ld clr.dll"}
+ {"Threads"}
+  {"Managed Threads[!threads]"} {"!threads"}
+  {"Native Threads[~]"} {"~"}
+  {"Thread Pool Threads[!threadpool]"} {"!threadpool"}
+  {"Show run time[!runaway]"} {"!runaway"}
+ {"Stacks"}
+  {"Current Managed Stack[!clrstack]"} {"!clrstack"}
+  {"CPU time for User and Kernel Mode"} {"!runaway 7"}
+  {"Current Managed Stack Parameters and Locals[!vars -w]"} {"!vars -w"}
+  {"Current Native Stack[kP]"} {"kP"}
+  {"Current Dump Stack[!dumpstack]"} {"!dumpstack"}
+  {"All Managed Stacks[~*e!clrstack]"} {"~*e!clrstack"}
+  {"All Managed Stack Parameters and Locals[~*e!vars -w]"} {"~*e!vars -w"}
+  {"All Native Stacks[~*kP]"} {"~*kP"}
+  {"All Dump Stacks[!eestack]"} {"!eestack"}
+ {"Memory"}
+  {"Address Summary[!address -summary]"} {"!address -summary"}
+  {"Version[!eeversion]"} {"!eeversion"}
+  {"Heap Stat[!HeapStat -iu]"} {"!HeapStat -iu"}
+  {"Stack Objects[!dso]"} {"!dso"}
+  {"gchandles"} {"!gchandles"}
+  {"GC Heap[!eeheap -gc]"} {"!eeheap -gc"}
+  {"Analyse memory"} {"!address -summary;!clrusage -v; !eeheap -gc"}
+  {"Heap Stats for Objects[!dumpheap -stat]"} {"!dumpheap -stat"}
+  {"Objects > 500 bytes[!dumpheap -min 500]"} {"!dumpheap -min 500"}
+  {"Objects > 1000 bytes[!dumpheap -min 1000]"} {"!dumpheap -min 1000"}
+  {"Gen 2 Objects[!dumpgen 2 -stat]"} {"!dumpgen 2 -stat"}
+  {"All objects scheduled for finalization[!finalizequeue]"} {"!finalizequeue"}
+  {"Dump dynamic assemblies[!dda]"} {"!dda"}
+  {"Dump heap statistics[!heap -s 0]"} {"!heap -s 0"}
+  {"Dump all heap blocks[!heap -h 0]"} {"!heap -h 0"}
+ {"Help"}
+  {"Version [vertarget]"} {"vertarget"}
+  {"SOS [!sos.help]"} {"!sos.help"}
+  {"Meta comands[.help]"} {".help"}
+ {"Symbols"}
+  {"Fix Symbols"} {".sympath srv*c:\symbols\localcache*http://msdl.microsoft.com/download/symbols;srv*c:\symbols\localcache*http://referencesource.microsoft.com/symbols/;c:\symbols\local"}
+  {"Set local symbol storage"} {".sympath+ C:\Symbols\Local"}
+  {"Print SymPath"} {".sympath"}
+  {"Reload Symbols[.reload]"} {".reload"}
+  {"Symbol Loging On[!sym noisy]"} {"!sym noisy"}
+  {"Symbol Loging Off[!sym quiet]"} {"!sym quiet"}
+ {"Tools"}
+  {"Clear[.cls]"} {".cls"}
+ {"Urls"}
+  {"Tess blog"} {"$ http://blogs.msdn.com/b/tess/"}
+  {"Failed to load data access DLL, 0x80004005"} {"$ http://blogs.msdn.com/b/dougste/archive/2009/02/18/failed-to-load-data-access-dll-0x80004005-or-what-is-mscordacwks-dll.aspx"}

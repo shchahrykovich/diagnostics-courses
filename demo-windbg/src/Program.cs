@@ -17,13 +17,14 @@ namespace Worker
                 e.Cancel = true;
                 _source.Cancel();
             };
+            Console.WriteLine("Press ctrl-c");
 
             List<Thread> threads = new List<Thread>
             {
                 CreateMemoryWorker(),
                 CreateSqlWorker(),
             };
-
+            
             foreach (var thread in threads)
             {
                 thread.Join();
