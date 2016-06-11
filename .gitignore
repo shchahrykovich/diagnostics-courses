@@ -203,3 +203,7 @@ Thumbs.db
 #ETW
 *.etl
 *.etl.zip
+
+#WinDbg
+tools/WinDbg_x64/
+tools/WinDbg_x86/
