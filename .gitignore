@@ -199,3 +199,7 @@ Thumbs.db
 # Vim swap buffer
 *.swp
 *.vshost.*
+
+#ETW
+*.etl
+*.etl.zip
