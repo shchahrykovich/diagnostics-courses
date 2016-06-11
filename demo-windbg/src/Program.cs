@@ -17,12 +17,19 @@ namespace Worker
                 e.Cancel = true;
                 _source.Cancel();
             };
+
+            AppDomain.CurrentDomain.UnhandledException += (object sender, UnhandledExceptionEventArgs e) =>
+            {
+                
+            };
+
             Console.WriteLine("Press ctrl-c");
 
             List<Thread> threads = new List<Thread>
             {
                 CreateMemoryWorker(),
                 CreateSqlWorker(),
+                CreateExceptionWorker()
             };
             
             foreach (var thread in threads)
@@ -43,6 +50,16 @@ namespace Worker
         {
             var worker = new MemoryWorker(_source.Token);
             Thread t = new Thread(worker.Run);
+            t.Start();
+            return t;
+        }
+
+
+        private static Thread CreateExceptionWorker()
+        {
+            var worker = new ExceptionWorker(_source.Token);
+            Thread t = new Thread(worker.Run);
+            t.IsBackground = true;
             t.Start();
             return t;
         }
