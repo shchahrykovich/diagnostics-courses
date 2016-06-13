@@ -18,11 +18,6 @@ namespace Worker
                 _source.Cancel();
             };
 
-            AppDomain.CurrentDomain.UnhandledException += (object sender, UnhandledExceptionEventArgs e) =>
-            {
-                
-            };
-
             Console.WriteLine("Press ctrl-c");
 
             List<Thread> threads = new List<Thread>
