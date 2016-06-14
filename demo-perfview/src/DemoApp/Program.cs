@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace TopDownAnalysis
+namespace DemoApp
 {
     class Program
     {
@@ -22,7 +22,8 @@ namespace TopDownAnalysis
             List<Thread> threads = new List<Thread>
             {
                 CreateFirstWorker(),
-                CreateSecondWorker()
+                CreateSecondWorker(),
+                CreateExceptionWorker()
             };
 
             foreach (var thread in threads)
@@ -42,6 +43,14 @@ namespace TopDownAnalysis
         private static Thread CreateSecondWorker()
         {
             var worker = new SecondWorker(_source.Token);
+            Thread t = new Thread(worker.Run);
+            t.Start();
+            return t;
+        }
+
+        private static Thread CreateExceptionWorker()
+        {
+            var worker = new ExceptionWorker(_source.Token);
             Thread t = new Thread(worker.Run);
             t.Start();
             return t;

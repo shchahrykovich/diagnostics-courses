@@ -6,7 +6,7 @@ In this lab, you will diagnose managed memory leaks with WinDbg, SOS, and SOSEX.
 
 Launch the FileExplorer.exe application from the [bin](bin/) folder. It takes a little while to launch because it enumerates all the folders in your Program Files directory.
 
-Run Sysinternals Process Explorer (procexp.exe) and double-click the FileExplorer.exe process. On the **.NET Performance** tab, note the values of the **# Bytes in all Heaps** performance counter. This is the application's managed memory usage.
+Run Sysinternals Process Explorer (procexp.exe in [tools](tools/) folder) and double-click the FileExplorer.exe process. On the **.NET Performance** tab, note the values of the **# Bytes in all Heaps** performance counter. This is the application's managed memory usage.
 
 Navigate through some of the folders displayed in File Explorer's folder tree. Note that the application's memory usage increases. It will go down occasionally as garbage collections occur, but the overall pattern is that the more folders you navigate, the higher the memory usage climbs.
 

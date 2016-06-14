@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace TopDownAnalysis
+namespace DemoApp
 {
     internal class FirstWorker
     {
@@ -26,7 +26,7 @@ namespace TopDownAnalysis
                 DateTime start = DateTime.Now;
                 for (;;)
                 {
-                    if ((DateTime.Now - start).TotalMilliseconds > 2000)
+                    if ((DateTime.Now - start).TotalMilliseconds > 2000 || _token.IsCancellationRequested)
                         break;
 
                     for (int i = 0; i < 100; i++)
@@ -43,7 +43,7 @@ namespace TopDownAnalysis
                 DateTime start = DateTime.Now;
                 for (;;)
                 {
-                    if ((DateTime.Now - start).TotalMilliseconds > 4000)
+                    if ((DateTime.Now - start).TotalMilliseconds > 4000 || _token.IsCancellationRequested)
                         break;
 
                     for (int i = 0; i < 100; i++)
@@ -62,7 +62,7 @@ namespace TopDownAnalysis
                 DateTime start = DateTime.Now;
                 for (;;)
                 {
-                    if ((DateTime.Now - start).TotalMilliseconds > 4200)
+                    if ((DateTime.Now - start).TotalMilliseconds > 4200 || _token.IsCancellationRequested)
                         break;
 
                     for (int i = 0; i < 100; i++)

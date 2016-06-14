@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace TopDownAnalysis
+namespace DemoApp
 {
     internal class SecondWorker
     {
@@ -22,7 +22,7 @@ namespace TopDownAnalysis
                 DateTime start = DateTime.Now;
                 for (;;)
                 {
-                    if ((DateTime.Now - start).TotalMilliseconds > 2500)
+                    if ((DateTime.Now - start).TotalMilliseconds > 2500 || _token.IsCancellationRequested)
                         break;
 
                     for (int i = 0; i < 100; i++)
@@ -39,7 +39,7 @@ namespace TopDownAnalysis
                 DateTime start = DateTime.Now;
                 for (;;)
                 {
-                    if ((DateTime.Now - start).TotalMilliseconds > 3500)
+                    if ((DateTime.Now - start).TotalMilliseconds > 3500 || _token.IsCancellationRequested)
                         break;
 
                     for (int i = 0; i < 100; i++)
@@ -58,7 +58,7 @@ namespace TopDownAnalysis
                 DateTime start = DateTime.Now;
                 for (;;)
                 {
-                    if ((DateTime.Now - start).TotalMilliseconds > 5000)
+                    if ((DateTime.Now - start).TotalMilliseconds > 5000 || _token.IsCancellationRequested)
                         break;
 
                     for (int i = 0; i < 100; i++)

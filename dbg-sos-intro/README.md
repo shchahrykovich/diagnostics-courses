@@ -7,6 +7,7 @@ In this lab, you will become familiar with basic WinDbg and SOS commands. Unlike
 Run the DebuggingDemo.exe application from the [bin](bin/) folder.
 
 Run WinDbg from the Debugging Tools for Windows 32-bit folder. (In a typical Windows SDK installation, this folder is C:\Program Files (x86)\Windows Kits\8.1\Debuggers\x86.)
+> Note: You can also find WinDbg archive in [tools](tools/) folder.
 
 Attach to the application's process using **File** > **Attach to Process**. Note that you can sort the list of processes alphabetically, by the executable name.
 
@@ -29,6 +30,7 @@ Load the SOS.dll debugging extension into your debugging session using the follo
 ```
 .loadby sos clr
 ```
+> Note: You can display all loaded extensions with the `.chain` command.
 
 Switch to the main thread using the `~0s` command and issue the `!CLRStack` command to inspect the thread's managed call stack. Compare this output with the output of the `k` command. Specifically, note that the instruction pointers (IP) displayed by the `!CLRStack` command correspond to some of the return addresses displayed by the `k` command.
 

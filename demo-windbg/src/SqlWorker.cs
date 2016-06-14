@@ -30,7 +30,7 @@ namespace Worker
                 {
                 }
 
-                Console.WriteLine("Tock");
+                Console.Write("Tock   ");
                 WaitHandle.WaitAll(new[] { _token.WaitHandle }, TimeSpan.FromMilliseconds(500));
             }
         }
