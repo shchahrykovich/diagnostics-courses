@@ -14,7 +14,7 @@ Open the first memory dump in WinDbg. Load SOS extension and print out managed h
 !DumpHeap -stat
 ```
 Now repeat these steps for the second dump and compare two tables.
-![Heap stat for 2 dumps](../img/HeapStatFor2Dumps.PNG)
+![Heap stat for 2 dumps](img/HeapStatFor2Dumps.PNG)
 
 ### References
 [Hidden catch when using linked CancellationTokenSource](https://lowleveldesign.wordpress.com/2015/11/30/catch-in-cancellationtokensource)
