@@ -52,4 +52,7 @@ git clone https://github.com/selagroup/diagnostics-courses.git
 1. [Running Heap Queries on Live Processes with CLRMD](dbg-clrmd-heapqueries/) [C#]
 1. [Analyzing UI Delays with the Visual Studio Concurrency Visualizer](perf-concvis-ui/)
 
+### List of Cases
+1. [Memory leak in Nancy](case-nancy-memory-leak/) [C#]
+
 Copyright (C) Sela Group, 2007-2016. All rights reserved.

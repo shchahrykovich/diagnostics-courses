@@ -39,7 +39,7 @@ It's time to find GC roots for `CancellationTokenSource` objects. In order to di
 
 Now we know that `CancellationTokenSource` holds the most of memory of the app and `Nancy.NancyEngine` holds references to the almost all instances of `CancellationTokenSource`.
 Find [NancyEngine](https://github.com/shchahrykovich/diagnostics-courses/blob/master/case-nancy-memory-leak/src/Nancy-1.4.1/Nancy/NancyEngine.cs) in the source code.
-On the [line 98](https://github.com/shchahrykovich/diagnostics-courses/blob/master/case-nancy-memory-leak/src/Nancy-1.4.1/Nancy/NancyEngine.cs#L98) a new linked cancellation token is created, but there is no Dispose.
+On the [line 98](https://github.com/shchahrykovich/diagnostics-courses/blob/master/case-nancy-memory-leak/src/Nancy-1.4.1/Nancy/NancyEngine.cs#L98) a new linked cancellation token is created, but there is no Dispose call.
 In order to fix the bug we have to call Dispose on `cts` variable.
 ```
  var cts = CancellationTokenSource.CreateLinkedTokenSource(this.engineDisposedCts.Token, cancellationToken);
