@@ -13,12 +13,9 @@ Open the WebAppBytesInAllHeaps.PerfmonCfg from the [bin](bin/) folder. The graph
 After a minute you will see that memory consumption is growing, which clearly indicates a memory leak.
 ![Memory consumption](img/memory-consumption.PNG)
 
-Close the console window.
-
-#### Task 2
+#### Task 3
 
 Find and fix the memory leak.
 
-#### References
-[Hidden catch when using linked CancellationTokenSource](https://lowleveldesign.wordpress.com/2015/11/30/catch-in-cancellationtokensource)
-[Fix](https://github.com/NancyFx/Nancy/commit/7d70fed4c1dbd9bd530564c4e06a178ed2e19ef6)
+#### Help
+[Solution](Solution.md)
