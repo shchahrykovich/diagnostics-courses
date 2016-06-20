@@ -11,7 +11,7 @@ Launch the WebApp.exe application from the [bin](bin/) folder. Navigate to [Feed
 
 Open the WebAppBytesInAllHeaps.PerfmonCfg from the [bin](bin/) folder. The graph shows memory consumption by WebApp.exe. Run the [MakeRequests.bat](bin/MakeRequests.bat). This script sends requests to the Nancy instance.
 After a minute you will see that memory consumption is growing, which clearly indicates a memory leak.
-![Memory consumption](/img/memory-consumption.PNG)
+![Memory consumption](img/memory-consumption.PNG)
 
 Close the console window.
 
