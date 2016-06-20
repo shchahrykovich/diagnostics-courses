@@ -207,3 +207,6 @@ Thumbs.db
 #WinDbg
 tools/WinDbg_x64/
 tools/WinDbg_x86/
+
+#VS db
+*.VC.db
