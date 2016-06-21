@@ -208,6 +208,5 @@ Thumbs.db
 tools/WinDbg_x64/
 tools/WinDbg_x86/
 
-#VS
+#VS db
 *.VC.db
-*.VC.opendb

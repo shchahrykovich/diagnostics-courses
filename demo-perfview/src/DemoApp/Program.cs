@@ -23,7 +23,9 @@ namespace DemoApp
             {
                 CreateFirstWorker(),
                 CreateSecondWorker(),
-                CreateExceptionWorker()
+                CreateExceptionWorker(),
+                CreateFirstSqlWorker(),
+                CreateSecondSqlWorker()
             };
 
             foreach (var thread in threads)
@@ -51,6 +53,22 @@ namespace DemoApp
         private static Thread CreateExceptionWorker()
         {
             var worker = new ExceptionWorker(_source.Token);
+            Thread t = new Thread(worker.Run);
+            t.Start();
+            return t;
+        }
+
+        private static Thread CreateFirstSqlWorker()
+        {
+            var worker = new FirstSqlWorker(_source.Token);
+            Thread t = new Thread(worker.Run);
+            t.Start();
+            return t;
+        }
+
+        private static Thread CreateSecondSqlWorker()
+        {
+            var worker = new SecondSqlWorker(_source.Token);
             Thread t = new Thread(worker.Run);
             t.Start();
             return t;

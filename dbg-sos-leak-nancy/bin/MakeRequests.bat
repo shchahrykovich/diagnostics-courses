@@ -1,1 +1,0 @@
-TinyGet.exe -srv:localhost -uri:/v1/feeds -port:5000 -threads:100 -loop:20000

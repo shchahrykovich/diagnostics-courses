@@ -1,5 +1,7 @@
 ### About This Repository
 
+[![Join the chat at https://gitter.im/shchahrykovich/diagnostics-courses](https://badges.gitter.im/shchahrykovich/diagnostics-courses.svg)](https://gitter.im/shchahrykovich/diagnostics-courses?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This repository contains supporting materials for Sela's diagnostics courses. The instructor will direct you to specific labs as the course progresses. Before you start working on the labs, make sure to review the [prerequisites](prerequisites.md) document. It contains information on required software installations as well as some configuration steps you should perform on your system.
 
 These materials are distributed under the GPL 2.0 license (see [LICENSE](LICENSE)).
@@ -49,5 +51,8 @@ git clone https://github.com/selagroup/diagnostics-courses.git
 1. [Implementing a Stack Dumper Utility with CLRMD](dbg-clrmd-stackdumper/) [C#]
 1. [Running Heap Queries on Live Processes with CLRMD](dbg-clrmd-heapqueries/) [C#]
 1. [Analyzing UI Delays with the Visual Studio Concurrency Visualizer](perf-concvis-ui/)
+
+### List of Cases
+1. [Memory leak in Nancy](case-nancy-memory-leak/) [C#]
 
 Copyright (C) Sela Group, 2007-2016. All rights reserved.

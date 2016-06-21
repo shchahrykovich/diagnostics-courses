@@ -28,7 +28,8 @@ namespace DemoApp
                     for (int i = 0; i < 100; i++)
                         _delay += i;
                 }
-                WaitHandle.WaitAll(new[] { _token.WaitHandle }, TimeSpan.FromMilliseconds(700));
+                Console.Write("Second worker");
+                WaitHandle.WaitAll(new[] { _token.WaitHandle }, TimeSpan.FromMilliseconds(3000));
             }
         }
 

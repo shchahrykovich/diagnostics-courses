@@ -7,7 +7,7 @@ In this lab, you will become familiar with basic WinDbg and SOS commands. Unlike
 Run the DebuggingDemo.exe application from the [bin](bin/) folder.
 
 Run WinDbg from the Debugging Tools for Windows 32-bit folder. (In a typical Windows SDK installation, this folder is C:\Program Files (x86)\Windows Kits\8.1\Debuggers\x86.)
-> Note: You can also find WinDbg archive in [tools](tools/) folder.
+> Note: You can also find WinDbg archive in [tools](../tools/) folder.
 
 Attach to the application's process using **File** > **Attach to Process**. Note that you can sort the list of processes alphabetically, by the executable name.
 
