@@ -19,7 +19,7 @@ At this point, you can run FileExplorer.exe and reproduce the crash. Procdump sh
 Run the 32-bit version of WinDbg, and use the **File** > **Symbol File Path** dialog to point the debugger to the [bin](bin/) directory, where the FileExplorer.pdb file resides. The symbol path should be a combination of the Microsoft symbol server and the local path. For example:
 
 ```
-C:\Course\dbg-dumps-windbg2\bin;srv*C:\symbols*http://msdl.microsoft.com/download/symbols
+C:\Projects\dbg-dumps-windbg2\bin;srv*C:\symbols*http://msdl.microsoft.com/download/symbols
 ```
 
 Next, use **File** > **Source File Path** to point the debugger to the [src\FileExplorer](src/FileExplorer/) folder. Finally, open the dump file using **File** > **Open Crash Dump**.

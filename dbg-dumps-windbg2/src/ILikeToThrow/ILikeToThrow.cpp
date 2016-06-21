@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include "string.h"
 #include <exception>
 
 class my_elaborate_exception : public std::exception
