@@ -49,7 +49,6 @@ namespace Worker
             return t;
         }
 
-
         private static Thread CreateExceptionWorker()
         {
             var worker = new ExceptionWorker(_source.Token);
