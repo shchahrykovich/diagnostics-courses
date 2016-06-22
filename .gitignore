@@ -210,3 +210,4 @@ tools/WinDbg_x86/
 
 #VS db
 *.VC.db
+tmp*
